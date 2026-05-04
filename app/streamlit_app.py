@@ -1,5 +1,11 @@
-"""Interface Streamlit para o RAG Financial Analyst."""
+import os
+import sys
 import streamlit as st
+
+# Adiciona o diretório raiz ao path do sistema para resolver os imports
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Agora o import funciona sem o prefixo "app."
 from app.rag.chain import create_rag_chain
 
 st.set_page_config(page_title="RAG Financial Analyst", layout="wide")
